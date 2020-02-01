@@ -33,3 +33,67 @@ def get_news (country,category):
 
     return news_result
 
+def process_results(news_list):
+    '''
+    function that takes in the new results and transform them to a list
+    '''
+    news_result =[]
+ 
+    for news_item in news_list:
+        id = news_item.get('id')
+        name = news_item.get('name')
+        print(id)
+        title = news_item.get('title')
+        description = news_item.get('description')
+        url = news_item.get('url')
+        category = news_item.get('category')
+        country = news_item.get('country')
+
+        if url:
+            news_object = Source(id,name,title,description,url,category,country)
+            news_result.append(news_object)
+    return news_result
+
+def get_updates(id):
+    get_news_details_url = source_url.format(id,api_key)
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+        
+        news_result = None
+
+        if news_details_response['articles']:
+           news_source_list = news_details_response['articles']
+           news_result = process_sources(news_source_list)
+
+    return news_result
+
+def process_sources(articles_list):
+    '''
+    process dictionary and that transform objects
+    '''
+    news_result = []
+    source_dictionary ={}
+    for results in articles_list:
+
+        source_id = result['source']
+
+        source_dictionary['id']= source_id['id']
+        source_dictionary['name'] = source_id['name']
+
+        id = source_dictionary['id']
+        print(id)
+        name = source_dictionary['name']
+
+        author = result.get('author')
+        title = result.get('title')
+        description = result.get('description')
+        url = result.get('url')
+        urlToImage = result.get('urlToImage')
+        publishedAt = result.get('publishedAt')
+
+        if urlToImage:
+            
+            news_object = Articles(id,name,author,title,description,url,urlToImage, publishedAt)
+            news_result.append(news_object)
+    return news_result

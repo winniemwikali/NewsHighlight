@@ -18,3 +18,11 @@ This is a web application that lists various News sources gotten from News API. 
 Python3.6
 How to use it
 must have internet connection
+
+## Setup/Installation Requirements
+internet access
+git clone 
+$ cd News-Highlight
+$ python3.6 -m venv virtual (install virtual environment)
+$ source virtual/bin/activate
+$ python3.6 -m pip install -r requirements.txt (install all dependencies)

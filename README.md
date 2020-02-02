@@ -19,10 +19,18 @@ Python3.6
 How to use it
 must have internet connection
 
-## Setup/Installation Requirements
+## Installation Requirements
 internet access
 git clone 
 $ cd News-Highlight
 $ python3.6 -m venv virtual (install virtual environment)
 $ source virtual/bin/activate
 $ python3.6 -m pip install -r requirements.txt (install all dependencies)
+
+## Technologies Used
+Python3.6
+Flask framework
+Bootstrap
+
+### License
+MIT (c) 2019 (Winnie Mwikali)

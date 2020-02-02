@@ -28,9 +28,9 @@ $ source virtual/bin/activate
 $ python3.6 -m pip install -r requirements.txt (install all dependencies)
 
 ## Technologies Used
-Python3.6
-Flask framework
-Bootstrap
+- Python3.6
+- Flask framework
+- Bootstrap
 
 ### License
 MIT (c) 2019 (Winnie Mwikali)

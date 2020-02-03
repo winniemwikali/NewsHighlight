@@ -9,7 +9,7 @@
   .navbar {
     font-size: 15px;
     font-style: bold;
-    font-style: oblique;
+    font-style:oblique;
     cursor: pointer;
     position: relative;
     left: 0;
@@ -19,11 +19,11 @@
     border-radius: 60px;
   }
   .navbar.selected:hover {
-    background-color: #BBD8DC !important;
+    background-color: rgb(94, 175, 74) !important;
     color: white;
   }
   .navbar:hover {
-    color: #607D8B;
+    color:purple;
     background-color: #DDD;
     left: .1em;
   }
@@ -32,18 +32,18 @@
     top: -3px;
   }
   .navbar-default {
-    background-color: #672121;
+    background-color: #a1ce6d;
     border-color: #121212;
   }
-  .well {
+  .winy {
     min-height: 20px;
     padding: 19px;
     margin-bottom: 20px;
     background-color: #758471;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow: inset 0 1px 1px rgba(25, 173, 99, 0.301);
+    box-shadow: inset 0 1px 1px rgba(50, 155, 146, 0.05);
   }
 </style>
 <div class="col-md-3 col-xs-12 col-lg-3">
@@ -77,14 +77,12 @@
         </div>
       </div>
       <div class="card-body">
-        <!-- <h5 class="card-title">Card title</h5> -->
+        
         <p class="card-text">{{article.description}}</p>
         <p class="card-text">id :{{article.name}}</p>
-        <p class="card-text"> auther :{{article.author}}</p>
+        <p class="card-text"> author :{{article.author}}</p>
         <p class="card-text"> was published at : {{article.publishedAt}}</p>
-        <!-- <form action = "/setcookie" method = "POST">
-         <button class="btn btn-danger" name = '{{article.url}}'> save offline</button>
-       </form> -->
+       
       </div>
     </div>
   </div>

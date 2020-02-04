@@ -27,3 +27,10 @@ def news():
     highlight_args = 'Route Working' 
     # name = k'{results_list}
     return render_template('news.html',highlight_param=highlight_args,news=news_args)   
+@main.route('/articles/<source>')
+def news_articles(source):
+    '''
+    View news page function that returns the news details page and its data
+    '''
+    news_articles = get_articles(source)
+    return render_template('articles.html', news_articles=news_articles)   

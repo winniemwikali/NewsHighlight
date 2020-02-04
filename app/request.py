@@ -102,3 +102,18 @@ def process_sources(articles_list):
             news_object = Articles(id,name,author,title,description,url,urlToImage, publishedAt)
             news_result.append(news_object)
     return news_result
+
+def get_articles(source):
+    """  """
+    articles_url = news_articles_url.format(source, api_key)
+
+    with urllib.request.urlopen(articles_url) as url:
+        get_news_data = url.read()
+        get_news_response = json.loads(get_news_data)
+
+        article_results = None
+        if get_news_response['articles']:
+            articles = get_news_response['articles']
+            article_results = process_articles(articles)
+
+    return article_results

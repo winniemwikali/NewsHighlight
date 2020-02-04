@@ -3,7 +3,7 @@ class Articles:
     define news objects
     '''
 
-    def __init__(self,d,name,author,title,description,url,urlToImage,publishedAt):
+    def __init__(self,id,name,author,title,description,url,urlToImage,publishedAt):
         self.id = id
         self.name =name
         self.author =author

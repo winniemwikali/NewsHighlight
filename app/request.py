@@ -64,9 +64,14 @@ def get_details(id):
         news_result = None
 
         if news_details_response['articles']:
-           news_source_list = news_details_response['articles']
+           news_source_list = news_details_response.get['articles']
            news_result = process_sources(news_source_list)
+           overview = news_details_response.get('overview')
+           poster = news_details_response.get('poster_path')
+           vote_average = news_details_response.get('vote_average')
+           vote_count = news_details_response.get('vote_count')
 
+           news_object = News(id,articles,overview,poster,vote_average,vote_count)
     return news_result
 
 def process_sources(articles_list):

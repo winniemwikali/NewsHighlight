@@ -10,13 +10,13 @@ def index():
     '''
 
     
-    general_list = get_news('us', 'general')
-    business_list = get_news('us', 'business')
-    technology_list = get_news('us', 'technology')
-    sports_list = get_news('us', 'sports')
-    health_list = get_news('us', 'health')
-    science_list = get_news('us', 'science')
-    entertainment_list = get_news('us', 'entertainment')
+    general_list = get_news('us','general')
+    business_list = get_news('us','business')
+    technology_list = get_news('us','technology')
+    sports_list = get_news('us','sports')
+    health_list = get_news('us','health')
+    science_list = get_news('us','science')
+    entertainment_list = get_news('us','entertainment')
     return render_template('index.html',general=general_list,business=business_list,technology=technology_list,sports=sports_list,health=health_list,science=science_list,entertainment=entertainment_list)
 @main.route('/news')
 def news():

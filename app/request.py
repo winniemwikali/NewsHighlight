@@ -6,7 +6,7 @@ from .models import Source
 api_key = None
 # Getting the movie base url
 base_url = None
-#
+
 source_url =None
 
 def configure_request(app):
@@ -23,8 +23,7 @@ def get_news (country, category):
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
-        # print(get_news_response)
-
+        
         news_result = None
 
 
